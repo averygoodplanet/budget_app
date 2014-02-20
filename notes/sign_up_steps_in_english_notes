@@ -1,0 +1,44 @@
+# As a first step, trying to document, in English, the signup feature on Squawker
+and its steps.  (Then can move on to trying to write my rspec capybara test, so
+I can mimic the simple functionality of this in my program.)
+
+*****Signing Up Happy Path--English*******
+-Goes to homepage
+-Click "Sign Up" button
+-Loads page to "squawker.me/users/sign_up"
+-Fill in the form
+username "phimmelr"
+email "averygoodplanet@gmail.com"
+password "garbanzobeans1!"
+password confirmation "garbanzobeans1!"
+-Click "Sign up" button within form (different from "Sign Up" button in nav)
+-Loads page "squawker.me"
+contains "Welcome! You have signed up successfully"
+shows My Profile
+shows Sign Out
+doesn't show Sign Up
+doesn't show Sign In
+.... add steps in English for sign out
+
+*******Signing In and then Signing Out Happy Path--English******
+-Goes to homepage
+-Click "Sign In"
+-Load page "squawker.me/users/sign_in"
+-Fill in
+username
+password
+-Click "Sign In" button in the form
+-Loads page "squawker.me"
+Displays "Signed in successfully"
+shows "My Profile"
+shows "Sign Out"
+doesn't show "Sign In"
+doesn't show "Sign Up"
+click Sign Out
+(still on "squawker.me" URL)
+shows "Signed out successfully"
+shows "Sign Up"
+shows "Sign In"
+
+
+`rails g` shows rails generate options
