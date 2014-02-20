@@ -10,7 +10,6 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'haml'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -32,6 +31,14 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test, :development do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'pry'
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 # Use ActiveModel has_secure_password
