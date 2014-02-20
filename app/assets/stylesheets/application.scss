@@ -1,0 +1,14 @@
+@import "foundation_and_overrides";
+/* Add imports of custom sass/scss files here */
+
+html
+{
+  body
+  {
+    background-image: url("purty_wood.png");
+    .row
+    {
+      background-color: white;
+    }
+  }
+}
