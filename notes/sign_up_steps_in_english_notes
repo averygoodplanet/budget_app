@@ -18,7 +18,12 @@ shows My Profile
 shows Sign Out
 doesn't show Sign Up
 doesn't show Sign In
-.... add steps in English for sign out
+(assuming same steps below for sign out)
+click Sign Out
+(still on "squawker.me" URL)
+shows "Signed out successfully"
+shows "Sign Up"
+shows "Sign In"
 
 *******Signing In and then Signing Out Happy Path--English******
 -Goes to homepage
