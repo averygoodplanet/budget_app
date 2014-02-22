@@ -3,6 +3,6 @@
 Fabricator(:user) do
   name "testuser"
   email "example@example.com"
-  password "passwordexample"
-  password_confirmation "passwordexample"
+  password "password"
+  password_confirmation "password"
 end
