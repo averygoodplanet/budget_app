@@ -13,7 +13,6 @@ Scenario: Sign Up and Logout
   And I fill in "password" for "Password"
   And I fill in "password" for "Password confirmation"
   And click "Sign up" button
-  Then show me the page
   Then I should see "Welcome! You have signed up successfully." in the notice
   And I should see my email address
   And I should see "Log Out"
@@ -23,12 +22,13 @@ Scenario: Sign Up and Logout
 Scenario: Log In and Log Out
   Given I am a signed up as testuser
   When I go to the homepage
-  Then show me the page
-  And click "Log In" button
-  Then I should see my email address
-  And I should see "Log Out"
+  And click Log In link
+  And I fill in "example@example.com" for "Email"
+  And I fill in "password" for "Password"
+  And click "Sign in" button
+  Then I should see "Log Out"
   And I should not see "Log In"
   And I should not see "Sign Up"
-  When I click "Log Out"
+  When I click Log Out link
   Then I should see "Log In"
   And I should not see "Log Out"

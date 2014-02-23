@@ -47,3 +47,12 @@ end
 Then(/^I should see "(.*?)" in the notice$/) do |arg1|
   find(".notice").should have_content(arg1)
 end
+
+Then(/^click Log In link$/) do
+  click_link("Log In")
+end
+
+When(/^I click Log Out link$/) do
+  click_link("Log Out")
+end
+
