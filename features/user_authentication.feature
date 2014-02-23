@@ -8,14 +8,13 @@ Feature: User Authentication
 
 Scenario: Sign Up and Logout
   When I go to the homepage
-  Then show me the page
-  And click "Sign Up" button
-  Then I fill in "testuser" for "Username"
+  And click the Sign Up link
   And I fill in "example@example.com" for "Email"
   And I fill in "password" for "Password"
-  And I fill in "password" for "Confirm Password"
-  And click "submit" button
-  Then I should see "You've signed up successfully."
+  And I fill in "password" for "Password confirmation"
+  And click "Sign up" button
+  Then show me the page
+  Then I should see "Welcome! You have signed up successfully." in the notice
   And I should see my email address
   And I should see "Log Out"
   And I should not see "Log In"

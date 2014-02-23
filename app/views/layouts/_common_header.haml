@@ -2,13 +2,14 @@
   .row
     .small-2.columns
       = image_tag("piggy_bank.png", id: "piggybank")
-    .small-10.columns
+    .small-3.columns
       %h1#website_name BudgetSimple
       %p.notice= notice
       %p.alert= alert
+    .small-7.columns
       - if user_signed_in?
-        %li= link_to current_user.email, edit_user_registration_path
-        %li= link_to "Log Out"
+        = link_to current_user.email, edit_user_registration_path, class: "button tiny radius authbuttons"
+        = link_to "Log Out", destroy_user_session_path, method: :delete, class: "button tiny radius authbuttons"
       - else
-        %li= link_to "Sign Up", new_user_registration_path
-        %li= link_to "Log In", new_user_session_path
+        = link_to "Sign Up", new_user_registration_path, class: "button tiny radius authbuttons"
+        = link_to "Log In", new_user_session_path, class: "button tiny radius authbuttons"

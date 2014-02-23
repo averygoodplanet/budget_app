@@ -12,7 +12,7 @@ Then(/^click "(.*?)" button$/) do |text|
   click_button(text)
 end
 
-Then(/^I fill in "(.*?)" for "(.*?)"$/) do |field_name, fill_in_with|
+Then(/^I fill in "(.*?)" for "(.*?)"$/) do |fill_in_with, field_name|
   fill_in(field_name, :with => fill_in_with)
 end
 
@@ -34,4 +34,16 @@ end
 
 When(/^I click "(.*?)"$/) do |button_text|
   click_button(button_text)
+end
+
+Then(/^click "(.*?)" link$/) do |arg1|
+  click_link(arg1)
+end
+
+Then(/^click the Sign Up link$/) do
+  click_link('Sign Up')
+end
+
+Then(/^I should see "(.*?)" in the notice$/) do |arg1|
+  find(".notice").should have_content(arg1)
 end

@@ -7,6 +7,13 @@ html
   {
     background-image: url("purty_wood.png");
 
+    .authbuttons
+    {
+      position:relative;
+      top: 42px;
+      color: white;
+    }
+
     #piggybank
     {
       height: 100px;
