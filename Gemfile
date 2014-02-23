@@ -38,6 +38,7 @@ group :test, :development do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'fabrication'
+  gem 'launchy'
   gem 'pry'
   gem 'rspec'
   gem 'rspec-rails'
