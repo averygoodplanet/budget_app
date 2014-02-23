@@ -14,12 +14,27 @@ html
       color: white;
     }
 
+    .form_button1
+    {
+      margin-bottom: 0px;
+    }
+
     .notice
     {
     position: relative;
     left: 260px;
     font-style: italic;
     color: #3366FF;
+    }
+
+    .user_auth_form
+    {
+      background: lemonchiffon;
+    }
+
+    .row
+    {
+      background-color: white;
     }
 
     #piggybank
@@ -33,10 +48,6 @@ html
       font-family: Cabin Sketch, sans-serif;
       margin-top: 28px;
       margin-left: -52px;
-    }
-    .row
-    {
-      background-color: white;
     }
   }
 }

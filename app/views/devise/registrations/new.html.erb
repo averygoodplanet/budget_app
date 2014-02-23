@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="small-6 small-offset-3">
+<!--     <h2>Sign up</h2> -->
+    <fieldset class="user_auth_form">
+        <legend>Sign Up</legend>
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email, :autofocus => true %></div>
+
+          <div><%= f.label :password %><br />
+          <%= f.password_field :password %></div>
+
+          <div><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation %></div>
+
+          <div><%= f.submit "Sign up",  class: "button tiny radius form_button1" %></div>
+        <% end %>
+      </fieldset>
+
+    <%= render "devise/shared/links" %>
+  <div class="small-2">
