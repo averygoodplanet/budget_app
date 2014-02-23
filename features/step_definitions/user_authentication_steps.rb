@@ -8,8 +8,8 @@ Then(/^show me the page$/) do
   # # Launchy.open 'screenshot.png'
 end
 
-Then(/^click "(.*?)" button$/) do |button_text|
-  click_button(button_text)
+Then(/^click "(.*?)" button$/) do |text|
+  click_button(text)
 end
 
 Then(/^I fill in "(.*?)" for "(.*?)"$/) do |field_name, fill_in_with|
