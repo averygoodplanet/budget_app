@@ -24,7 +24,7 @@
         <div>
           <%= f.submit "UPDATE", class: "button tiny radius form_button1"  %>
           <%= link_to "Back", :back, class: "button tiny radius form_button1"  %>
-          <%= link_to "Cancel my account", registration_path(resource_name), class: "button tiny radius alert",  id: "cancel", :data => { :confirm => "Are you sure?" }, :method => :delete %>
+          <%= link_to "Cancel my account", registration_path(resource_name), class: "button tiny radius alert float_right",  :data => { :confirm => "Are you sure?" }, :method => :delete %>
         </div>
       <% end %>
     </fieldset>
