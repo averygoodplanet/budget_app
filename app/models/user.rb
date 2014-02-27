@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   end
 
   def create_default_categories(budget)
-    budget.categories.create(name: "first category")
+    default_categories = ["Saving", "Housing", "Utiilities", "Food",
+        "Transportation", "Clothing", "Medical/Health", "Personal", "Recreation", "Debts"]
+    for category in default_categories do
+      budget.categories.create(name: category)
+    end
   end
 end
