@@ -47,3 +47,17 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+module ::RSpec::Core
+  class ExampleGroup
+    include Capybara::DSL
+    include Capybara::RSpecMatchers
+  end
+end
+
+def sign_user_in(user)
+  visit '/'
+  click_link("Log In")
+  fill_in("Email", :with => user.email)
+  fill_in("Password", :with => user.password)
+end

@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   has_many :budgets, dependent: :destroy
 
   def create_new_budget(name)
-    # budget = Budget.create(name: name, user: current_user)
-    budget = Budget.create(name: name, user: self.name)
+    budget = self.budgets.create(name: name, user: self)
   end
 end

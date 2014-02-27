@@ -4,8 +4,11 @@ describe User do
   describe "#create_new_budget" do
     before(:each) do
       @current_user = Fabricate(:user)
-      sign_in @current_user
-      @current_user.create_new_budget(name: "new budget")
+      # helper method---fabricate user, capybara steps to sign in
+      # in spec_helper.rb
+      # pass the user to the helper method
+      sign_user_in(@current_user)
+      @current_user.create_new_budget("new budget")
     end
 
     it "should create a new budget under current_user with a budget name" do
