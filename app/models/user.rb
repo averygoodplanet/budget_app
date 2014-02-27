@@ -7,5 +7,10 @@ class User < ActiveRecord::Base
 
   def create_new_budget(name)
     budget = self.budgets.create(name: name, user: self)
+    create_default_categories(budget)
+  end
+
+  def create_default_categories(budget)
+    budget.categories.create(name: "first category")
   end
 end
