@@ -32,5 +32,12 @@ describe User do
       category_names.should =~ ["Saving", "Housing", "Utiilities", "Food",
         "Transportation", "Clothing", "Medical/Health", "Personal", "Recreation", "Debts"]
     end
+
+    it "the new budget's categories should start with income_cents set to zero" do
+      categories = Budget.first.categories
+      for category in categories
+        category.amount_cents.should equal(0)
+      end
+    end
   end
 end
