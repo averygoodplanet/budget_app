@@ -1,5 +1,8 @@
-Given(/^I'm logged in as a testuser$/) do
+Given(/^a testuser$/) do
   @user = Fabricate(:user)
+end
+
+Given(/^I'm logged in as a testuser$/) do
   visit '/'
   click_link("Log In")
   fill_in("Email", :with => @user.email)
