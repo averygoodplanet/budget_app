@@ -6,6 +6,7 @@ Feature: Table Page
 
   Scenario: Login and then See Table Page
     Given I'm logged in as a testuser
+    Then I should be on the budgets path
     Given I have two budgets created in the system
     Then show me the page
     Then I should see the two budgets' names displayed

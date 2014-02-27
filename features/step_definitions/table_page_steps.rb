@@ -16,3 +16,7 @@ Then(/^I should see the two budgets' names displayed$/) do
   page.should have_content("first budget")
   page.should have_content("second budget")
 end
+
+Then(/^I should be on the budgets path$/) do
+  current_path.should == "/budgets"
+end
