@@ -7,5 +7,5 @@ Feature: Table Page
   Scenario: Login and then See Table Page
     Given I'm logged in as a testuser
     Given I have two budgets created in the system
-    Then I should see the two budgets' names displayed
     Then show me the page
+    Then I should see the two budgets' names displayed
