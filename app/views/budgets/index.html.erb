@@ -19,11 +19,16 @@
       <tr>
         <th>Budget Name</th>
         <th>Last Modified</th>
+        <th>Actions</th>
       </tr>
     <% @budgets.each do |budget| %>
       <tr>
         <td><%= budget.name %></td>
         <td><%= budget.updated_at %></td>
+        <td>
+          <%= button_to "Delete", { action: "delete", id: budget.id},
+                                              method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
       </tr>
     <% end %>
     </table>

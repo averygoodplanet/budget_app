@@ -21,4 +21,10 @@ class BudgetsController < ApplicationController
     @categories = current_user.budgets.find(@id).categories.to_a
     @title_string ="Budget: " + @budget.name
   end
+
+  def delete
+    id = params[:id]
+    current_user.budgets.find(id).destroy
+    redirect_to budgets_path
+  end
 end

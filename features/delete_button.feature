@@ -11,5 +11,4 @@ Scenario: Delete a Budget
   When I go to the table page
   And I should see "My New Budget"
   And click "Delete" button
-  Then show me the page
   And I should not see "My New Budget"
