@@ -9,5 +9,4 @@ Feature: Table Page
     Given I have two budgets created in the system
     Given I'm logged in as a testuser
     Then I should be on the budgets path
-    Then show me the page
     Then I should see the two budgets' names displayed

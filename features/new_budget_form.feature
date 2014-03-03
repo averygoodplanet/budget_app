@@ -13,4 +13,3 @@ Feature: New Budget Form
     And click "Create Budget" button
     Then I should be on the edit page
     And I should see "My New Budget"
-    Then show me the page

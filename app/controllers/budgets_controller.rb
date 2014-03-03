@@ -1,6 +1,6 @@
 class BudgetsController < ApplicationController
   def index
-    @budgets = current_user.budgets.all
+    @budgets = current_user.budgets.to_a
     #putting "New Budget" form on same page as budget
     @budget = current_user.budgets.new
   end
