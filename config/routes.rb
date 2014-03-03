@@ -1,6 +1,7 @@
 BudgetApp::Application.routes.draw do
   get "budgets" => 'budgets#index'
-  post "budgets" => 'budgets#create'
+  post "budgets" => 'budgets#create', as: 'new_budget'
+  get "budgets/:id/edit" => 'budgets#edit', as: 'edit_budget'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

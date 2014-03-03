@@ -1,0 +1,8 @@
+.row
+  .small-12.columns
+    %h1= @title_string
+  .small-12.columns
+    %p= "Budget Income: " + @budget.income_cents.to_s
+  .small-12.columns
+    - @categories.each do |category|
+      %p= category.name + ":  " + category.amount_cents.to_s

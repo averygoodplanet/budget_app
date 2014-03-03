@@ -10,7 +10,7 @@ Feature: New Budget Form
     Given I'm logged in as a testuser
     Then I should be on the budgets path
     When I fill in "My New Budget" for "Name"
-    And click "Create New Budget" button
+    And click "Create Budget" button
     Then I should be on the edit page
     And I should see "My New Budget"
     Then show me the page
