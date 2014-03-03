@@ -3,7 +3,11 @@
   <div class="small-3 columns">
       <fieldset class="">
           <legend>Add a Budget</legend>
-
+          <%= form_for(@budget) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.submit "Submit", class: "button tiny radius form_button1" %>
+          <% end %>
       </fieldset>
   </div>
 </div>
