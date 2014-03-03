@@ -26,6 +26,7 @@
         <td><%= budget.name %></td>
         <td><%= budget.updated_at %></td>
         <td>
+          <%= button_to "Edit", {action: "edit", id: budget.id}, method: :get %>
           <%= button_to "Delete", { action: "delete", id: budget.id},
                                               method: :delete, data: { confirm: "Are you sure?" },
                                               :class => 'button tiny radius alert' %>
