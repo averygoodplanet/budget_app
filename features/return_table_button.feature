@@ -14,4 +14,4 @@ Scenario: Use the Return to Table Button
   Then I should be on the edit page
   And I should see "My New Budget"
   And click "Return to Table" button
-  Then I should be on the edit page
+  Then I should be on the table page

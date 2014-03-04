@@ -1,8 +1,14 @@
 .row
   .small-12.columns
     %h1= @title_string
-  .small-12.columns
+.row
+  .small-8.columns
     %p= "Budget Income: " + @budget.income_cents.to_s
+  .small-3.columns
+    =button_to "Return to Table", {action: 'index'}, method: :get,
+                                                data: {confirm: "Are you sure? Unsaved changes will be lost."},
+                                                :class => 'button tiny radius'
+  .small-1.columns
   .small-12.columns
     - @categories.each do |category|
       %p= category.name + ":  " + category.amount_cents.to_s
