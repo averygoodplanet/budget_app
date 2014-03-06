@@ -21,6 +21,6 @@
       = f.label :income, "Income"
       = f.text_field :income_cents, data: { role: 'money' }
       = f.fields_for :categories do |categories_form|
-        = categories_form.label :name
+        = categories_form.label :amount_cents, categories_form.object.name
         = categories_form.text_field :amount_cents, data: { role: 'money' }
       = f.submit
