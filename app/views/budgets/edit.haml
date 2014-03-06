@@ -26,6 +26,6 @@
 /         = f.text_field :amount_cents, data: { role: 'money', a_sep: ',', a_dec: ','}
 .row
   .small-2.columns
-    = form_for @budget do |f|
+    = form_for :budget do |f|
       = f.label :Income, "my income"
       = f.text_field :income_cents, data: { role: 'money' }
