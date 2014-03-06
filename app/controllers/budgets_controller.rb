@@ -27,4 +27,20 @@ class BudgetsController < ApplicationController
     current_user.budgets.find(id).destroy
     redirect_to budgets_path
   end
+
+  def update
+    # binding.pry
+    # @book = Book.find(params[:id])
+    # @book.update_attributes(params[:book])
+    @budget = Budget.find(params[:id])
+    # @budget.update_attributes(budget_params)
+    @budget.update(budget_params)
+    # binding.pry
+    redirect_to budgets_path
+  end
+
+  private
+  def budget_params
+    params.require(:budget).permit(:income_cents, categories_attributes: [:id, :amount_cents])
+  end
 end
