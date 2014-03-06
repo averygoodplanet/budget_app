@@ -1,14 +1,26 @@
 .row
-  .small-12.columns
+  .small-9.columns
     %h1= @title_string
-.row
-  .small-8.columns
-    %p= "Budget Income: " + @budget.income_cents.to_s
   .small-3.columns
     =button_to "Return to Table", {action: 'index'}, method: :get,
                                                 data: {confirm: "Are you sure? Unsaved changes will be lost."},
                                                 :class => 'button tiny radius'
-  .small-1.columns
-  .small-12.columns
+/ .row
+/   .small-12.columns
+/     %p= "Budget Income: " + @budget.income_cents.to_s
+/ .row
+/   .small-12.columns
+/     - @categories.each do |category|
+/       %p= category.name + ":  " + category.amount_cents.to_s
+.row
+  .small-2.columns
+    = form_for :budget do |f|
+      = f.label :Income
+      = f.text_field :income_cents, data: { role: 'money', a_sep: ',', a_dec: '.'}
+  .small-10.columns
+.row
+  .small-2.columns
     - @categories.each do |category|
-      %p= category.name + ":  " + category.amount_cents.to_s
+      = form_for :category do |f|
+        = f.label category.name
+        = f.text_field :amount_cents, data: { role: 'money', a_sep: ',', a_dec: ','}
