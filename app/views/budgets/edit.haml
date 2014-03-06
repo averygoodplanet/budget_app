@@ -16,11 +16,16 @@
   .small-2.columns
     = form_for :budget do |f|
       = f.label :Income
-      = f.text_field :income_cents, data: { role: 'money', a_sep: ',', a_dec: '.'}
+      = f.text_field :income_cents, data: { role: 'money'}
   .small-10.columns
+/ .row
+/   .small-2.columns
+/     - @categories.each do |category|
+/       = form_for :category do |f|
+/         = f.label category.name
+/         = f.text_field :amount_cents, data: { role: 'money', a_sep: ',', a_dec: ','}
 .row
   .small-2.columns
-    - @categories.each do |category|
-      = form_for :category do |f|
-        = f.label category.name
-        = f.text_field :amount_cents, data: { role: 'money', a_sep: ',', a_dec: ','}
+    = form_for @budget do |f|
+      = f.label :Income, "my income"
+      = f.text_field :income_cents, data: { role: 'money' }
