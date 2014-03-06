@@ -5,16 +5,6 @@
     =button_to "Return to Table", {action: 'index'}, method: :get,
                                                 data: {confirm: "Are you sure? Unsaved changes will be lost."},
                                                 :class => 'button tiny radius'
-/ .row
-/   .small-2.columns
-/     = form_for @budget do |f|
-/       = f.label :Income, "my income"
-/       = f.text_field :income_cents, data: { role: 'money' }
-/       = @budget.categories.each do |category|
-/         = form_for category do |f|
-/           = f.label category.name
-/           = f.text_field :amount_cents, data: { role: 'money' }
-/       = f.submit
 .row
   .small-2.columns
     = form_for @budget do |f|
@@ -23,4 +13,4 @@
       = f.fields_for :categories do |categories_form|
         = categories_form.label :amount_cents, categories_form.object.name
         = categories_form.text_field :amount_cents, data: { role: 'money' }
-      = f.submit
+      = f.submit :class => 'button tiny radius'
