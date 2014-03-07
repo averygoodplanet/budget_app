@@ -6,13 +6,15 @@ class BudgetsController < ApplicationController
   end
 
   def create
-    # get params
     budget_name = params[:budget][:name]
-    #save new budget to database
-    current_user.create_new_budget(budget_name)
-    @id = current_user.budgets.where(name: budget_name).first.id
-    # redirect to edit page
-    redirect_to edit_budget_path(@id)
+
+    if !budget_name.blank?
+      current_user.create_new_budget(budget_name)
+      @id = current_user.budgets.where(name: budget_name).first.id
+      redirect_to edit_budget_path(@id)
+    else
+      redirect_to budgets_path
+    end
   end
 
   def edit

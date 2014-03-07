@@ -5,7 +5,7 @@
           <legend>Add a Budget</legend>
           <%= form_for(@budget) do |f| %>
             <%= f.label :name %>
-            <%= f.text_field :name %>
+            <%= f.text_field :name, :required => true %>
             <%= f.submit "Create Budget", class: "button tiny radius form_button1" %>
           <% end %>
       </fieldset>
