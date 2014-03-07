@@ -29,27 +29,18 @@ class BudgetsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    # @book = Book.find(params[:id])
-    # @book.update_attributes(params[:book])
+
     budget_income = params[:budget][:income_cents].tr('$', '').tr(',' , '').to_f
     @budget = Budget.find(params[:id])
-    # @budget.update_attributes(income_cents: 100)
-    # @budget.update(income_cents: 200)
     @budget.update(income_cents: budget_income)
-    zero_category_id = params[:budget][:categories_attributes]["0"]["id"]
-    zero_category_amount = params[:budget][:categories_attributes]["0"]["amount_cents"]
-    zero_category_amount_float = zero_category_amount.tr('$', '').tr(',' , '').to_f
-    Category.find(zero_category_id).update(amount_cents: zero_category_amount_float)
-    # binding.pry
-    # @budget.update(name: budget_income)
-    # @budget.update(income_cents: params[:budget][:income_cents])
-    # binding.pry
-    # @budget.income_cents(budget_income)
-    # @budget.save
-    # @budget.update_attributes(budget_params)
-    # @budget.update(budget_params)
-    # binding.pry
+
+    number_of_categories = params[:budget][:categories_attributes].length
+    for i in 0..(number_of_categories-1)
+      category_id = params[:budget][:categories_attributes][i.to_s]["id"]
+      category_amount_float = params[:budget][:categories_attributes][i.to_s]["amount_cents"].tr('$', '').tr(',', '').to_f
+      Category.find(category_id).update(amount_cents: category_amount_float)
+    end
+
     redirect_to budgets_path
   end
 
