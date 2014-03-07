@@ -3,7 +3,7 @@
     %h1= @title_string
   .small-3.columns
     =button_to "Return to Table", {action: 'index'}, method: :get,
-                                                data: {confirm: "Are you sure? Unsaved changes will be lost."},
+                                                data: {confirm: { title: "Are you sure? Any unsaved changes will be disgarded."}},
                                                 :class => 'button tiny radius'
 .row
   .small-2.columns

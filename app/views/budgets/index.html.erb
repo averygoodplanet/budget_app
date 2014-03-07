@@ -32,8 +32,8 @@
         <td>
           <%= button_to "Delete", { action: "delete", id: budget.id},
                                               method: :delete, data: { confirm: {
-                              title: "Are you sure you want to delete the budget called #{budget.name}?",
-                              ok: 'Delete' }.to_json},
+          title: "Are you sure you want to delete the budget called #{budget.name}?",
+                                              ok: 'Delete' }.to_json},
                                               :class => 'button tiny radius alert' %>
         </td>
       </tr>
