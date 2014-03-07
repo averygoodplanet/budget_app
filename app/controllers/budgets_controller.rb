@@ -32,11 +32,16 @@ class BudgetsController < ApplicationController
     # binding.pry
     # @book = Book.find(params[:id])
     # @book.update_attributes(params[:book])
-    budget_income = params[:budget][:income_cents].tr('$', '').to_f
+    budget_income = params[:budget][:income_cents].tr('$', '').tr(',' , '').to_f
     @budget = Budget.find(params[:id])
     # @budget.update_attributes(income_cents: 100)
     # @budget.update(income_cents: 200)
     @budget.update(income_cents: budget_income)
+    zero_category_id = params[:budget][:categories_attributes]["0"]["id"]
+    zero_category_amount = params[:budget][:categories_attributes]["0"]["amount_cents"]
+    zero_category_amount_float = zero_category_amount.tr('$', '').tr(',' , '').to_f
+    Category.find(zero_category_id).update(amount_cents: zero_category_amount_float)
+    # binding.pry
     # @budget.update(name: budget_income)
     # @budget.update(income_cents: params[:budget][:income_cents])
     # binding.pry
