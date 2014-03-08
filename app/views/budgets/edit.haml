@@ -7,6 +7,12 @@
                                                 :class => 'button tiny radius'
 .row
   .small-2.columns
+    %label Unallocated Funds:
+  .small-2.columns
+    %input{:id => 'unallocatedFunds', :type => 'text', :readonly => true}
+  .small-10.columns
+.row
+  .small-2.columns
     = form_for @budget do |f|
       = f.label :income, "Income"
       = f.text_field :income_cents, data: { role: 'money' }
