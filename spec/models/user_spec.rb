@@ -16,7 +16,7 @@ describe User do
     end
 
     it "should create a budget with income_cents of zero" do
-      @current_user.budgets.where(name: "new budget")[0].income_cents.should equal(0)
+      @current_user.budgets.where(name: "new budget")[0].income_cents.should eq(0)
     end
 
     it "should create the ten (10) categories under the new budget" do
@@ -36,7 +36,7 @@ describe User do
     it "the new budget's categories should start with income_cents set to zero" do
       categories = Budget.first.categories
       for category in categories
-        category.amount_cents.should equal(0)
+        category.amount_cents.should eq(0)
       end
     end
   end
