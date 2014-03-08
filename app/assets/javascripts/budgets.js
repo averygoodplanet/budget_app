@@ -8,6 +8,8 @@ $(document).ready(function () {
   // Unallocated Funds.
   if ($("form.edit_budget").length != 0) {
     $("form.edit_budget").load(updateUnallocatedFunds());
+    $("[id$=_amount_cents]").on('change', updateUnallocatedFunds);
+    $("#budget_income_cents").on('change', updateUnallocatedFunds);
   }
 
   function updateUnallocatedFunds() {
