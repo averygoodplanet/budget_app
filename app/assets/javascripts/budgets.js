@@ -14,13 +14,13 @@ $(document).ready(function () {
 
   function updateUnallocatedFunds() {
     var income_string = $('#budget_income_cents').val();
-    var income = parseFloat(income_string.replace('$', ''));
+    var income = parseFloat(income_string.replace('$', '').replace(',', ''));
     var income_cents = parseInt(income * 100);
 
     var sum_of_spending_cents = 0
 
     $('[id$=_amount_cents]').each(function() {
-      var category_spending = parseFloat($(this).val().replace('$', ''));
+      var category_spending = parseFloat($(this).val().replace('$', '').replace(',', ''));
       var category_spending_cents = parseInt(category_spending * 100);
       sum_of_spending_cents += category_spending_cents;
     });
@@ -29,4 +29,14 @@ $(document).ready(function () {
     $('#unallocatedFunds').val('$'+unallocated_dollars_and_cents);
   };
 
+  // On Enter: 1) don't submit form, 2) update unallocated, 3) lose focus.
+  $('form.edit_budget').keypress(function(event)
+  {
+      if (event.keyCode == 13)
+      {
+          event.preventDefault();
+          $(event.target).blur();
+          updateUnallocatedFunds();
+      }
+  });
 });
