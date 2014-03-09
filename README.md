@@ -1,11 +1,15 @@
 BudgetSimple
 ========
 
+Live Example at http://budget-simple.herokuapp.com/
+----------------------------------------------
+
 Description
 ---------
 
 This is my back-end project for the Nashville Software School, allowing users to
 login into the website and create, update and save simple budgets in US currency.
+
 
 Technologies/Skills Demonstrated
 ---------------------------
