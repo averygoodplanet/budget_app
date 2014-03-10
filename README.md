@@ -9,7 +9,8 @@ Description
 
 This is my back-end project for the Nashville Software School, allowing users to
 login into the website and create, update and save simple budgets in US currency.
-
+I chose this project because I knew that I wanted to create a CRUD app, and I wanted
+to apply it a practical, down-to-earth problem.
 
 Technologies/Skills Demonstrated
 ---------------------------
